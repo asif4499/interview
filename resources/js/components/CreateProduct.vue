@@ -130,7 +130,8 @@ export default {
                 thumbnailWidth: 150,
                 maxFilesize: 0.5,
                 headers: {"My-Awesome-Header": "header value"}
-            }
+            },
+            success: false
         }
     },
     methods: {
@@ -190,7 +191,7 @@ export default {
 
 
             axios.post('/product', product).then(response => {
-                console.log(response.data);
+                this.success = true;
             }).catch(error => {
                 console.log(error);
             })
